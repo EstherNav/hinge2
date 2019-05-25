@@ -39,6 +39,56 @@ Solid {
               size 0.5 0.01 0.1
             }
           }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.25 0 0
+              minStop -1
+              maxStop 1
+              springConstant 0.5
+              dampingConstant 0.5
+              staticFriction 0.1
+            }
+            endPoint Solid {
+              translation 0.35 0 0
+              rotation 0 0 1 0
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.3058823529411765 0.6039215686274509 0.023529411764705882
+                  }
+                  geometry DEF G_GTABLE Box {
+                    size 0.2 0.01 0.1
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0.1 0 0
+                    staticFriction 0.01
+                  }
+                  endPoint Solid {
+                    translation 0.2 0 0
+                    children [
+                      Shape {
+                        appearance PBRAppearance {
+                          baseColor 0 0 0
+                        }
+                        geometry DEF G_BTABLE Box {
+                          size 0.2 0.01 0.1
+                        }
+                      }
+                    ]
+                    boundingObject USE G_BTABLE
+                    physics Physics {
+                    }
+                  }
+                }
+              ]
+              boundingObject USE G_GTABLE
+              physics Physics {
+              }
+            }
+          }
         ]
         boundingObject USE G_RTABLE
         physics Physics {
