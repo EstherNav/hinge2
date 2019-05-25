@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6931032800836722 0.6931032800836722 0.1980295085953349 0.75
-  position 1.2 1.6 2.3
+  orientation -0.7796309531218752 0.5340356041481922 0.32708034247926276 1.3129364774680345
+  position 0.8652431005788435 3.0426572007479673 0.8905133621677792
 }
 TexturedBackground {
 }
@@ -24,8 +24,12 @@ Solid {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0.5 0
+        staticFriction 0.01
       }
       endPoint Solid {
+        translation 0.25 0.5 0
         children [
           Shape {
             appearance PBRAppearance {
