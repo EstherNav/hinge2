@@ -1,0 +1,45 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.6931032800836722 0.6931032800836722 0.1980295085953349 0.75
+  position 1.2 1.6 2.3
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+      }
+      geometry Cylinder {
+        height 1
+        radius 0.15
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      endPoint Solid {
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.6431372549019608 0 0
+            }
+            geometry DEF G_RTABLE Box {
+              size 0.5 0.01 0.1
+            }
+          }
+        ]
+        boundingObject USE G_RTABLE
+        physics Physics {
+        }
+      }
+    }
+  ]
+}
